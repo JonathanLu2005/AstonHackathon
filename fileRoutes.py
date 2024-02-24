@@ -39,4 +39,21 @@ def rooms():
 
 @routeManager.route('/getJson',methods=["POST","GET"])
 def getJson():
-    return {"hello":"parth"}
+
+    data = [{
+            "name":"roomName",
+            "codes": "XXXX"
+
+            },
+            {
+            "name":"roomName",
+            "codes": "XXXX"
+            },
+            {
+                "name":"roomName",
+                "codes": "XXXX"
+            }
+            
+            ]
+
+    return data
