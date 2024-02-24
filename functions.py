@@ -8,6 +8,9 @@ client = MongoClient('mongodb+srv://astonHack2024:aStonHack24@astonhack2024.6kwd
 db = client["data"]
 myUsers = db["myUsers"]
 
+def getCurrentActiveCodes():
+    return currentActiveCodes
+
 def insertDataToDb():
     dataEx = {"name": "AstonHack2024", "password": "something"}
     myUsers.insert_one(dataEx)
@@ -25,10 +28,23 @@ def generateRoomCode():
 
 def addUniquePair(roomName):
     new_code = generateRoomCode()
-    for pair in currentActiveCodes:
-        if pair['codes'] == new_code:
-            addUniquePair()
-        currentActiveCodes.append({"name": roomName, "codes": new_code})
+    while True:
+        flag = True
+        for pair in currentActiveCodes:
+            if pair["codes"] == new_code:
+                flag = False
+                break  # Break out of the for loop
+        if flag:
+            break  # Break out of the while loop if a unique code is found
+        else:
+            new_code = generateRoomCode()
+    
+    currentActiveCodes.append({"codes": new_code, "name": roomName})
+    print("CURRENT ACTIVE CODES: ", currentActiveCodes)
+    return new_code
 
 def getActiveRooms():
     return currentActiveCodes
+
+
+
