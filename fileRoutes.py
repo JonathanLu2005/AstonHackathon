@@ -30,15 +30,6 @@ def register():
         # This is where you handle registration
         return render_template('register.html')
 
-@routeManager.route('/joinRoom', methods=["POST", "GET"])
-def joinRoom():
-    return render_template('joinRoom.html')
-
-@routeManager.route('/joinRoom/<id>', methods=["POST","GET"])
-def joinRoom(id):
-    test = "hello"
-    return render_template('joinRoom.html', {{test}})
-
 @routeManager.route('/rooms', methods=["POST", "GET"])
 def rooms():
     
