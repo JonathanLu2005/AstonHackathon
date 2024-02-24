@@ -35,7 +35,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:33vw;
+    width:76vw;
     height:98vh;
 }
 
@@ -54,7 +54,9 @@ body{
     font-size:20px;
 }
 
-.join-input>input[type=]
+.join-input>input[type="text"]{
+    padding-left: 10px;
+}
 
 .join-input>*{
     display: flex;
@@ -92,4 +94,20 @@ input[type="submit"]{
 
 input[type="text"]{
     width: 10vw;
+}
+
+.wrapper{
+    display:flex;
+}
+.right-side{
+    width:33vw;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.room{
+    border:solid black 2px;
+    width:30vw;
+    text-align: center;
 }

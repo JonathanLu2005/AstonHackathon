@@ -1,0 +1,23 @@
+{% extends 'baseHtml.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% block css %}
+    <link rel="stylesheet" href="/static/css/index.css">
+    {% endblock %}
+</head>
+{% block content %}
+<body>
+    <header>
+        <h1>Title</h1>
+    </header>
+    <div class="home">
+        <h1>What is the website about?</h1>
+        <p>Welcome to our educational platform designed to make studying fun and interactive! On our website, you can easily upload your study materials and kickstart your learning journey. Once you've uploaded your file, a timer starts to keep you focused and on track. When the timer ends, get ready to play our exciting Goose Game! We've partnered with OpenAI to bring you a unique experience where you'll answer questions provided by their API. Each question comes with four options, and when you choose the correct answer, your goose moves one step closer to victory! It's a race against time and your own knowledge, making learning a thrilling competition. Join us and turn your study sessions into exciting adventures!</p>
+    </div>  
+</body>
+{% endblock %}
+</html>
