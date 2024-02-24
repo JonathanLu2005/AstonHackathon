@@ -1,0 +1,41 @@
+{% extends 'baseHtml.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block css %}
+  <link href="/static/css/style.css" rel="stylesheet">
+  {% endblock %}
+  
+  <title>Quiz App</title>
+</head>
+{% block content %}
+<body>
+  <div class="q-box"> 
+    <h1 id = "q-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea culpa enim rerum sapiente deleniti sunt perspiciatis hic repellat placeat natus facilis asperiores nulla, id soluta quo repudiandae consectetur voluptas minus!</h1>
+    <div id="score-box"><p id="score-text">10/10</p></div>
+  </div>
+  
+  <div class="row">
+    <div id="a1-box" class="a-box"><p id="a1-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</p></div>
+    <div id="a2-box"class="a-box"><p id="a2-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</p></div>
+  </div>
+  <div class="row">
+    <div id="a3-box" class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
+    <div id="a4-box" class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
+  </div>
+  <script defer src="/static/js/script.js"></script>
+</body>
+
+<div id="audioControls">
+  <button id="playButton">Play</button>
+  <button id="pauseButton">Pause</button>
+</div>
+<audio id="audioPlayer" controls>
+  <source src="{{ url_for('static', filename='music/lofiMusic.mp3') }}" type="audio/mpeg">
+</audio>
+{% endblock %}
+</html>
