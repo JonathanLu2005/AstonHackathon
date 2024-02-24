@@ -1,5 +1,7 @@
 from flask import render_template, Blueprint, request
+from dbFunctions import insertData
 import random
+import json
 
 routeManager = Blueprint('routeManager', __name__, template_folder='templates', static_folder='static')
 
@@ -32,3 +34,13 @@ def register():
 @routeManager.route('/joinRoom', methods=["POST", "GET"])
 def joinRoom():
     return render_template('joinRoom.html')
+
+@routeManager.route('/testing', methods=["POST", "GET"])
+def createRoom():
+    insertData()
+    return "This is a test page"
+
+@routeManager.route('/getJsonData', methods=["POST", "GET"])
+def getJsonData():
+    exampleData = {{}}
+    return "This is a test page"
