@@ -1,8 +1,9 @@
+
 .row{
-  display:flex;
-  width:98vw;
-  margin:auto;
-  justify-content: center;
+  display:flex !important;
+  width:98vw !important;
+  margin:auto !important;
+  justify-content: center !important;
 }
 .q-box{
   width:60vw;

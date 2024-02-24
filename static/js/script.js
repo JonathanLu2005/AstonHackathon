@@ -91,8 +91,7 @@ answerClicked(currentq.answer == currentq.options[1]);  });
   });
   a4_box.addEventListener("click", function() {
     answerClicked(currentq.answer == currentq.options[3]);
-  });
-  
+  });  
   function answerClicked(isCorrect){
     qsAnswered++;
     if(isCorrect){

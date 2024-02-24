@@ -66,4 +66,4 @@ def studyRoomJoin():
 
 @routeManager.route('/studySpaceTest', methods=["POST","GET"])
 def studySpaceTest():
-    return render_template('studySpaceTest/index.html')
+    return render_template('studySpaceTest.html')
