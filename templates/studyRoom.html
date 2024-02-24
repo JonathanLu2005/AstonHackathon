@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room</title>
+    <title>Name: Room: </title>
     {% block css %} 
     <link rel="stylesheet" href="/static/css/studyRoom.css">
     {% endblock %}
@@ -13,22 +13,56 @@
 <body>
     <header>
         <h1>
-            Room XXXX
+            {{roomName}} {{roomCode}}
         </h1>
     </header>
-    <div class="timer-container">
-        <h1 id="timer-text">
-            <span id="hours">--</span>:
-            <span id="mins">--</span>:
-            <span id="secs">--</span>
-        </h1>
-    </div>
+    <label for="durationInput">Set Duration:</label>
+  <input type="time" id="durationInput" step="1" value="00:10">
+    <div id="timer"></div>
     <div class="upload-container">
-        <label for="upload">Upload a .pdf or .docx file</label>
-        <input title="upload"type="file" id="image" name="upload"accept=".pdf .docx">
         <label for="upload">Copy and paste notes here</label>
         <textarea name="" id="" cols="30" rows="10"></textarea>
     </div>
+    <script>
+        var durationInSeconds;
+        var timerInterval;
+    
+        function startTimer() {
+          // Get the value from the time input and convert it to seconds
+          var timeInput = document.getElementById('durationInput').value;
+          var [hours, minutes] = timeInput.split(':').map(Number);
+          durationInSeconds = hours * 3600 + minutes * 60;
+    
+          // Clear any existing timer
+          clearInterval(timerInterval);
+    
+          // Start the new timer
+          timerInterval = setInterval(updateTimer, 1000);
+        }
+    
+        function updateTimer() {
+          if (durationInSeconds <= 0) {
+            // Timer has reached zero or negative value, do something when the timer expires
+            clearInterval(timerInterval);
+            document.getElementById('timer').innerHTML = 'Timer expired!';
+          } else {
+            // Calculate minutes and seconds
+            var minutes = Math.floor(durationInSeconds / 60);
+            var seconds = durationInSeconds % 60;
+    
+            // Display the timer in the 'timer' div
+            document.getElementById('timer').innerHTML = pad(minutes) + 'm ' + pad(seconds) + 's';
+    
+            // Decrease the duration by 1 second
+            durationInSeconds--;
+          }
+        }
+    
+        function pad(value) {
+          return value < 10 ? '0' + value : value;
+        }
+      </script>
+    
 </body>
 {% endblock %}
 </html>

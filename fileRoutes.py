@@ -1,5 +1,4 @@
 from flask import render_template, Blueprint, request
-from functions import generateRoomCode 
 import random
 
 routeManager = Blueprint('routeManager', __name__, template_folder='templates', static_folder='static')
@@ -35,29 +34,13 @@ def rooms():
     
     return render_template('rooms.html')
 
-@routeManager.route('/testing', methods=["POST", "GET"])
-def testing():
-    generateRoomCode()
-    return "Done"
-
-
 @routeManager.route('/getJson',methods=["POST","GET"])
 def getJson():
-
-    data = [{
-            "name":"roomName",
-            "codes": "XXXX"
-
-            },
-            {
-            "name":"roomName",
-            "codes": "XXXX"
-            },
-            {
-                "name":"roomName",
-                "codes": "XXXX"
-            }
-            
-            ]
-
-    return data
+    return {"hello":"parth"}
+                    
+@routeManager.route('/studyRoom', methods=["POST","GET"])
+def studyRoom():
+    roomName = request.form["roomName"]
+    roomCode = request.form["roomCode"]
+    return render_template('studyRoom.html',roomName = roomName, roomCode = roomCode)
+#[{codes:...,name:...}...]
