@@ -16,37 +16,58 @@
     <div class="top">
 
     </div>
-    <div class="left-side">
-        <div class="centered">
-            <div class="create-room-title">
-                <h1>Create Room</h1>
+    <div class="wrapper">
+        
+        <div class="left-side">
+            <div class = "centered">
+                <div class="create-room-title">
+                    <h1>Create Room</h1>
+                </div>
+                <div class="create-room">
+                    <form class="create-button" action="" method="post">
+                        <input type="submit" value="Create">
+                    </form>
+                </div>
+                <!-- End of create-room -->
+                <div class="join-room">
+                    <div class="title">
+                        <h1>Join Room</h1>
+                    </div>
+                    <div>
+                        <form class="join-input" action=""  method="post">
+                            <input maxlength="4" type="text" name="roomCode"placeholder="Enter code">
+                            <input type="submit" value="Join">
+                        </form>
+                    </div>
+                </div>
+                <!-- End of join-room -->
             </div>
-            <div>
-                <form class="create-button" action="" method="post">
-
-                    <input type="submit" value="Create">
-                </form>
-                
-            </div>
-        <div class="join-room">
-            <div class="title">
-                <h1>Join Room</h1>
-            </div>
-            <div>
-            <form class="join-input" action=""  method="post">
-                <input maxlength="4" type="text" name="roomCode"placeholder="Enter code">
-                <input type="submit" value="Join">    
-            </form>
+            <!-- End of centred -->
+        </div>
+        <!-- End of left-side -->
+        
+        <div class="right-side">
+            <div class="list-rooms" id="list-rooms">
+                <h1>Available Rooms</h1>
+                <div class="room">
+                    <p> Name: XXXX Code: XXXX</p>
+        
+                </div>
+                <!-- <div class="room">
+                    <p> Room XXXX</p>
+        
+                </div>
+                <div class="room">
+                    <p> Room XXXX</p>
+        
+                </div> -->
                 
             </div>
         </div>
+        <!-- End of right-side -->
     </div>
+    <!-- End of wrapper -->
 
-    <div class="right-side">
-        <div class="list-rooms">
-            
-        </div>
-    </div>
     <script src="/static/js/getRoomJSON.js" defer></script>
 </body>
 {% endblock %}

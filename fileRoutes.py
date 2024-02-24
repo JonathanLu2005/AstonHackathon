@@ -6,7 +6,7 @@ routeManager = Blueprint('routeManager', __name__, template_folder='templates', 
 
 @routeManager.route('/', methods=["POST", "GET"])
 def index():
-    return render_template('baseHtml.html')
+    return render_template('index.html')
 
 @routeManager.route('/login', methods=["POST", "GET"])
 def login():
