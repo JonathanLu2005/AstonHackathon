@@ -7,37 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% block css %}
-  <link href="styles.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   {% endblock %}
   <script defer src="script.js"></script>
   <title>Quiz App</title>
 </head>
 {% block content %}
 <body>
-  <div id="canvas"></div>
-    <body onload="startGame()">
-      <h1>Goose Game</h1>
-      <script src="/templates/studySpaceTest/gooseGame.js"></script>
-    </body>
-
-
-  <div class="container">
-    <div id="question-container" class="hide">
-      <div id="question">Question</div>
-      <div id="answer-buttons" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
-      </div>
-    </div>
-    <div class="controls">
-      <button id="start-btn" class="start-btn btn">Start</button>
-      <button id="next-btn" class="next-btn btn hide">Next</button>
-    </div>
+  <div class="q-box"> 
+    <h1 id = "q-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea culpa enim rerum sapiente deleniti sunt perspiciatis hic repellat placeat natus facilis asperiores nulla, id soluta quo repudiandae consectetur voluptas minus!</h1>
+    <div id="score-box"><p id="score-text">10/10</p></div>
   </div>
-
-  <script src="/static/js/getQuizJSON.js" defer></script>
+  
+  <div class="row">
+    <div class="a-box"id="a1"><p id="a1-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</p></div>
+    <div class="a-box"id="a2"><p id="a2-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</p></div>
+  </div>
+  <div class="row">
+    <div class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
+    <div class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
+  </div>
+  
 </body>
 
 

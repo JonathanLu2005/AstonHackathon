@@ -111,3 +111,7 @@ input[type="text"]{
     width:30vw;
     text-align: center;
 }
+
+.info{
+    color:red;
+}
