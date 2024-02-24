@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% block css %}
-  <link href="style.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
   {% endblock %}
-  <script defer src="script.js"></script>
+  <script defer src="/static/js/script.js"></script>
   <title>Quiz App</title>
 </head>
 {% block content %}
@@ -20,12 +20,12 @@
   </div>
   
   <div class="row">
-    <div class="a-box"id="a1"><p id="a1-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</p></div>
-    <div class="a-box"id="a2"><p id="a2-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</p></div>
+    <div id="a1-box" class="a-box"><p id="a1-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</p></div>
+    <div id="a2-box"class="a-box"><p id="a2-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</p></div>
   </div>
   <div class="row">
-    <div class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
-    <div class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
+    <div id="a3-box" class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
+    <div id="a4-box" class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
   </div>
   
 </body>

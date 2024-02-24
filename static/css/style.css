@@ -9,6 +9,7 @@
   text-align: center;
   display:flex;
   justify-content: center;
+  align-items: center;
   margin:auto;
   position:relative;
   padding-inline:5vw;
@@ -20,4 +21,9 @@
 }
 .a-box{
   margin-inline:50px;  
+  width:30vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
