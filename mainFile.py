@@ -9,5 +9,5 @@ from fileRoutes import routeManager #Must be after app is defined
 app.register_blueprint(routeManager)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
     

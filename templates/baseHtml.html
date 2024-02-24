@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Some Name</title>
-    <!--<link rel="icon" href="static/images/logo.png" type="image/icon type">-->
     <link rel="stylesheet" href="/static/css/baseCss.css">
     {% block css %}{% endblock %}
     <script src='/static/js/baseJs.js' defer></script>
@@ -12,11 +11,6 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="/static/images/logo.png" alt="EventByte Logo">
-            <h1>Some App</h1>
-        </div>
-
         <nav>
             <a href="/">Home</a>
             <a href="{{ url_for('routeManager.login') }}">Login</a>

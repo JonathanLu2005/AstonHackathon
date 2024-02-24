@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap');
+
+body{
+    background: linear-gradient(45deg, #50b8e7, #84cdee, #b9e2f5, #dcf0fa, #edf7fc, #9bf4bc, #84e5a8, #67d28f, #4fc179, #38ae63);
+    background-size: 2000% 2000%;
+
+    -webkit-animation: AnimationName 17s ease infinite;
+    -moz-animation: AnimationName 17s ease infinite;
+    animation: AnimationName 17s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+body{
+    font-family: "Gorditas";
+}
+
+.left-side{
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:33vw;
+    height:98vh;
+    border: solid black 1px;
+}
+
+.right-side{
+    right:0;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.join-input{
+    margin-top: 20px;
+    position: relative;
+    display:flex;
+    margin: 5px;
+    font-size:20px;
+    justify-content: center;
+}
+
+.join-input>*{
+    display: flex;
+    justify-content: flex;
+    border-radius: 15px;
+}
+
+.create-button>*{
+    border-radius: 15px;
+}
+
+input[type="submit"]{
+    width:5vw;
+    height: 5vh;
+    text-align:center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.create-room-title {
+    text-align: center; /* Center the text within its container */
+}
+
+.create-button {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the child horizontally */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.title{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+
+input[type="text"]{
+    width: 10vw;
+}
