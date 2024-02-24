@@ -9,7 +9,7 @@
   {% block css %}
   <link href="/static/css/style.css" rel="stylesheet">
   {% endblock %}
-  <script defer src="/static/js/script.js"></script>
+  
   <title>Quiz App</title>
 </head>
 {% block content %}
@@ -27,9 +27,15 @@
     <div id="a3-box" class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
     <div id="a4-box" class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
   </div>
-  
+  <script defer src="/static/js/script.js"></script>
 </body>
 
-
+<div id="audioControls">
+  <button id="playButton">Play</button>
+  <button id="pauseButton">Pause</button>
+</div>
+<audio id="audioPlayer" controls>
+  <source src="{{ url_for('static', filename='music/lofiMusic.mp3') }}" type="audio/mpeg">
+</audio>
 {% endblock %}
 </html>

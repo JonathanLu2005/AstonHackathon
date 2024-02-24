@@ -91,3 +91,7 @@ header>nav{
       float: none;
     }
   }
+
+  audio::-webkit-media-controls{
+    display: none;
+  }
