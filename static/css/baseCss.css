@@ -40,4 +40,7 @@ header>nav{
     font-size:40px;
     text-decoration: none;
     font-family: "Berkshire Swash";
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
