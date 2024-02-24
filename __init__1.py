@@ -118,10 +118,11 @@ def create_app():
 
     @app.route("/joinRoom/<id>", methods=["POST","GET"])
     def joinRoom(id):
-        
 
+        if request.method == "POST":
+            ourExtract = request.form["extract"]     
 
-        
-        return render_template("joinRoom.html")
+        test = "hello"        
+        return render_template("joinRoom.html", {{test}})
 
     return app

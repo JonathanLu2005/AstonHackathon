@@ -33,8 +33,14 @@ def register():
 def joinRoom():
     return render_template('joinRoom.html')
 
+@routeManager.route('/joinRoom/<id>', methods=["POST","GET"])
+def joinRoom(id):
+    test = "hello"
+    return render_template('joinRoom.html', {{test}})
+
 @routeManager.route('/rooms', methods=["POST", "GET"])
 def rooms():
+    
     return render_template('rooms.html')
 
 @routeManager.route('/getJson',methods=["POST","GET"])
