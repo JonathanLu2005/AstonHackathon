@@ -18,13 +18,31 @@
     <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
 </head>
 <body>
-    <div class="sidebar bg-primary" style="font-family:Gorditas;">
-        <h2 class="text-dark ">Website Name</h2>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary" style="font-family:Gorditas;">
+        <div class="container">
+            <h2 class="navbar-brand text-dark ">Website Name</h2>
         
-        <a class="nav-link text-dark" href="/">Home</a>
-        <a class="nav-link text-dark" href="{{ url_for('routeManager.login') }}">Login</a>
-        <a class="nav-link text-dark" href="{{ url_for('routeManager.register') }}">Register</a>
-    </div>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#differentPages" aria-controls="differentPages" aria-label="Expand Navigation">
+                <div class="navbar-toggler-icon"></div>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="differentPages">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/">Home</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{{ url_for('routeManager.login') }}">Login</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{{ url_for('routeManager.register') }}">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <br></br>
 
