@@ -6,7 +6,7 @@ const spriteHeight = 64; // Height of each frame in the sprite
 const spriteFrames = 17; // Total number of frames in the sprite
 
 const spriteImage = new Image();
-spriteImage.src = 'BackGroundGoose.png'; // Replace with the actual path to your sprite image
+spriteImage.src = '/static/assets/BackGroundGoose.png'; // Replace with the actual path to your sprite image
 
 let frameIndex = 0;
 let frameCounter = 0;
