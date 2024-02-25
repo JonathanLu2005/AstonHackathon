@@ -20,6 +20,10 @@ def load_user(user_id):
 def index():
     return render_template('index.html')
 
+@routeManager.route('/leaderBoard', methods=["POST","GET"])
+def leaderBoard():
+    return render_template('leaderBoard.html')
+
 @routeManager.route('/login', methods=["POST", "GET"])
 def login():
     if request.method == 'GET':
