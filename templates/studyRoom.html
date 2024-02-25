@@ -13,55 +13,24 @@
 <body>
     <header>
         <h1>
-            {{roomName}} {{roomCode}}
+            Room Name:{{roomName}} Room Code:{{roomCode}}
         </h1>
+        <h1 id="clock">00:00:00</h1>
     </header>
-    <label for="durationInput">Set Duration:</label>
-  <input type="time" id="durationInput" step="1" value="00:10">
+    <label for="durationInput">Set Duration (hh:mm:ss):</label>
+    <input type="time" id="durationInput" step="1" value="00:10">
+    <button id="play-pause">Play/Pause</button>
     <div id="timer"></div>
     <div class="upload-container">
-        <label for="upload">Copy and paste notes here</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        
+        <form action="" method="post" id="notes-form">
+          <label for="notes">Copy and Paste notes here</label>
+          <textarea title="notes" id="" cols="30" rows="10"></textarea>
+          <input type="submit" value="Upload">
+        </form>
+        
     </div>
-    <script>
-        var durationInSeconds;
-        var timerInterval;
-    
-        function startTimer() {
-          // Get the value from the time input and convert it to seconds
-          var timeInput = document.getElementById('durationInput').value;
-          var [hours, minutes] = timeInput.split(':').map(Number);
-          durationInSeconds = hours * 3600 + minutes * 60;
-    
-          // Clear any existing timer
-          clearInterval(timerInterval);
-    
-          // Start the new timer
-          timerInterval = setInterval(updateTimer, 1000);
-        }
-    
-        function updateTimer() {
-          if (durationInSeconds <= 0) {
-            // Timer has reached zero or negative value, do something when the timer expires
-            clearInterval(timerInterval);
-            document.getElementById('timer').innerHTML = 'Timer expired!';
-          } else {
-            // Calculate minutes and seconds
-            var minutes = Math.floor(durationInSeconds / 60);
-            var seconds = durationInSeconds % 60;
-    
-            // Display the timer in the 'timer' div
-            document.getElementById('timer').innerHTML = pad(minutes) + 'm ' + pad(seconds) + 's';
-    
-            // Decrease the duration by 1 second
-            durationInSeconds--;
-          }
-        }
-    
-        function pad(value) {
-          return value < 10 ? '0' + value : value;
-        }
-      </script>
+   <script src="/static/js/studyRoom.js"></script>
     
 </body>
 {% endblock %}
