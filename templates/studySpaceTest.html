@@ -14,18 +14,38 @@
 </head>
 {% block content %}
 <body>
+  <section class="jumbotron text-left">
+    <div class="container">
+      <div class="card border-dark border-5 border rounded-bottom rounded-top">
+        <div class="card-body">
+          <div class="q-box"> 
+            <h1 id = "q-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea culpa enim rerum sapiente deleniti sunt perspiciatis hic repellat placeat natus facilis asperiores nulla, id soluta quo repudiandae consectetur voluptas minus!</h1>
+            <div id="score-box"><p id="score-text">10/10</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<!--
   <div class="q-box"> 
     <h1 id = "q-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea culpa enim rerum sapiente deleniti sunt perspiciatis hic repellat placeat natus facilis asperiores nulla, id soluta quo repudiandae consectetur voluptas minus!</h1>
     <div id="score-box"><p id="score-text">10/10</p></div>
-  </div>
+  </div>-->
   
   <div class="row">
-    <div id="a1-box" class="a-box"><p id="a1-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</p></div>
-    <div id="a2-box"class="a-box"><p id="a2-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</p></div>
+    <br>
+    <div id="a1-box" class="a-box"><button id="a1-text" class="btn btn-primary text-dark">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, possimus?</button></div>
+    <br>
+    <div id="a2-box"class="a-box"><button id="a2-text" class="btn btn-primary text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, excepturi!</button></div>
+    <br>
   </div>
   <div class="row">
-    <div id="a3-box" class="a-box"id="a3"><p id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</p></div>
-    <div id="a4-box" class="a-box" id="a4"><p id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</p></div>
+    <div id="a3-box" class="a-box"id="a3"><button class="btn btn-primary text-dark" id="a3-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, temporibus?</button></div>
+    <br>
+    <div id="a4-box" class="a-box" id="a4"><button class="btn btn-primary text-dark" id="a4-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, harum.</button></div>
+    <br>
   </div>
   <script defer src="/static/js/script.js"></script>
 </body>
