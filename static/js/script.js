@@ -49,6 +49,12 @@ answerClicked(currentq.correct_answer == currentq.answers[1]);  });
       correctAnswers++;
     }
     qIndex= (qIndex+1)%demoQs.questions.length;
+    if(qIndex<demoQs.questions.length){
+      qIndex++;
+    }else{
+      alert("Quiz Over!")
+      window.history.back();
+    }
     update();
   }
 }
