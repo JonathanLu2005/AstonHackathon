@@ -92,6 +92,8 @@ def promptAI():
     prompt = request.form["prompt"]
     res = generate_content(template1+prompt)
     print(res[4:-4])
-    return json.loads(res[4:-4])
+    output = json.loads(res[4:-4])  ##This should go to output
+
+    return render_template('studySpaceTest.html', output=output)
     #return render_template('response.html', response=generate_content(prompt))
     
