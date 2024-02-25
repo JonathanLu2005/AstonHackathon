@@ -3,7 +3,7 @@ import random
 
 currentActiveCodes = []
 
-client = MongoClient('mongodb+srv://astonHack2024:aStonHack24@astonhack2024.6kwduwc.mongodb.net/?retryWrites=true&w=majority&appName=AstonHack2024')
+client = MongoClient('mongodb://localhost:27017/')
 
 db = client["data"]
 myUsers = db["myUsers"]
@@ -46,5 +46,22 @@ def addUniquePair(roomName):
 def getActiveRooms():
     return currentActiveCodes
 
+def registerUser(username, password):
+    res = myUsers.find_one({"name": username})
+    if res != None:
+        return "User already exists!"
+    else:
+        dataToAdd = {"name": username, "password": password}
+        myUsers.insert_one(dataToAdd)
+        return None
 
+def loginUser(username, password):
+    res = myUsers.find_one({"name": username})
+    if res == None:
+        return "User does not exist!"
+    else:
+        if res["password"] != password:
+            return "Incorrect password!"
+        else:
+            return None
 

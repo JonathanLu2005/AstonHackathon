@@ -89,3 +89,7 @@ input[type="submit"]{
 .login-form>label{
     font-size:30px;
 }
+
+.infoText{
+    color:red;
+}
