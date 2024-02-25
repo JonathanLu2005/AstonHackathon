@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.row{
+  display:flex !important;
+  width:98vw !important;
+  margin:auto !important;
+  justify-content: center !important;
+}
+.q-box{
+  width:60vw;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  position:relative;
+  padding-inline:5vw;
+}
+#score-box{
+  position:absolute;
+  top:0;
+  right:0;
+}
+.a-box{
+  margin-inline:50px;  
+  width:30vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#audioControls{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#playButton,#pauseButton{
+  border-radius:30px;
+  width: 10vw;
+  height: 10vh;
+  font-family: "Gorditas";
+  font-size:20px;
+  margin:10px;
+}
+
+#visualizer {
+  background-color:transparent;
+}

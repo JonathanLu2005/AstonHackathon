@@ -1,0 +1,98 @@
+{% extends 'baseHtml.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Rooms</title>
+    {% block css %}
+    <link rel="stylesheet" href="/static/css/rooms.css">
+    {% endblock %}
+</head>
+{% block content %}
+<body>
+    <section class="jumbotron text-left animated-element" >
+        <div class="vstack">
+            <div class="container">
+                <h1 class="text-center"> Rooms </h1>
+        
+            
+                <div class="row">
+        
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card"> 
+                                <h2 class="card-title card-header text-center">Create and Join Rooms</h2>
+                                <div class="card-body col d-flex justify-content-center">
+                                    <div class="card-text text-left">
+                                        <centre>
+                                            <div class="info">
+                                                <h3>{{errorMessage}}</h3>
+                                            </div>
+                                            <div class="create-room-title">
+                                                <h3>Create Room</h3>
+                                            </div>
+                                            <div class="create-room">
+                                                <form class="join-input" action="/studyRoomCreate" method="post">
+                                                    <input maxlength="10" type="text" name="roomName"placeholder="Room Name">
+                                                    <input type="submit" value="Create">
+                                                </form>
+                                            </div>
+                                            <!-- End of create-room -->
+                                            <div class="join-room">
+                                                <div class="title">
+                                                    <h3>Join Room</h3>
+                                                </div>
+                                                <div>
+                                                    <form class="join-input" action="/studyRoomJoin"  method="post">
+                                                        <input maxlength="4" type="text" name="roomCode"placeholder="Enter code">
+                                                        <input type="submit" value="Join">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </centre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card">
+                                <h2 class="card-title card-header text-center">Available Rooms</h2>
+                                <div class="card-body col d-flex justify-content-center">
+                                    <div class="card-text text-left">
+                                        <div class="list-rooms" id="list-rooms">
+                                            <div class="room">
+                                                <p> Name: XXXX Code: XXXX</p>
+                                    
+                                            </div>
+                                            <!-- <div class="room">
+                                                <p> Room XXXX</p>
+                                    
+                                            </div>
+                                            <div class="room">
+                                                <p> Room XXXX</p>
+                                    
+                                            </div> -->
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/static/js/getRoomJSON.js" defer></script>
+</body>
+{% endblock %}
+</html>
