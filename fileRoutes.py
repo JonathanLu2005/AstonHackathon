@@ -79,7 +79,7 @@ def studyRoomJoin():
     print(activeRooms)
     for room in activeRooms:
         if room['codes'] == roomCode.upper():
-            return redirect(url_for('routeManager.studyRoom', roomName = roomName, roomCode = roomCode))
+            return redirect(url_for('routeManager.studyRoom', roomName = room['name'], roomCode = roomCode))
     return render_template('rooms.html', errorMessage="Room does not exist")
 
 @routeManager.route('/studySpaceTest', methods=["POST","GET"])
