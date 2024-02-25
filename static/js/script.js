@@ -52,6 +52,7 @@ answerClicked(currentq.correct_answer == currentq.answers[1]);  });
     update();
   }
 }
+
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 

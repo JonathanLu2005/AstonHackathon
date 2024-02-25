@@ -62,6 +62,10 @@ def studyRoom():
     roomName = request.args.get("roomName")
     roomCode = request.args.get("roomCode")
     return render_template('studyRoom.html', roomName = roomName, roomCode = roomCode)
+
+@routeManager.route('/forum', methods=["POST", "GET"])
+def forum():
+    return render_template('forum.html')
                    
 @routeManager.route('/studyRoomCreate', methods=["POST"])
 def studyRoomCreate():
