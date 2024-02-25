@@ -13,7 +13,6 @@ let frameIndex = 0;
 let frameCounter = 0;
 
 spriteImage.onload = function(){
-    canvas.width = window.innerWidth;
     animate();
 }
 

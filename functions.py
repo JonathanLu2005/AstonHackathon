@@ -2,12 +2,15 @@ from pymongo import MongoClient
 import random
 
 currentActiveCodes = []
-
+forumComments=["Wow! Much goos!"]
 client = MongoClient('mongodb://localhost:27017/')
 
 db = client["data"]
 myUsers = db["myUsers"]
-
+def addNewComment(newComment):
+    forumComments.append(newComment)
+def getForumComments():
+    return forumComments
 def getCurrentActiveCodes():
     return currentActiveCodes
 

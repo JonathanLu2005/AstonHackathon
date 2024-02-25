@@ -1,6 +1,6 @@
 
 from flask import render_template, Blueprint, request, url_for, redirect
-from functions import addUniquePair, getActiveRooms, registerUser, loginUser
+from functions import addUniquePair, getActiveRooms, registerUser, loginUser,getForumComments,addNewComment
 from flask_login import LoginManager, login_user, current_user, logout_user, login_required
 from AI import generate_content
 import random
@@ -19,6 +19,10 @@ def load_user(user_id):
 @routeManager.route('/', methods=["POST", "GET"])
 def index():
     return render_template('index.html')
+
+@routeManager.route('/leaderBoard', methods=["POST","GET"])
+def leaderBoard():
+    return render_template('leaderBoard.html')
 
 @routeManager.route('/login', methods=["POST", "GET"])
 def login():
@@ -65,7 +69,17 @@ def studyRoom():
 
 @routeManager.route('/forum', methods=["POST", "GET"])
 def forum():
-    return render_template('forum.html')
+    return render_template('forum.html',comments = getForumComments())
+
+@routeManager.route('/addToForum', methods=["POST"])
+def addToforum():
+    #if request.method == "POST":
+     #   messageReceive = request.form("comment")
+
+
+    addNewComment(request.form['comment'])
+    print(request.form['comment'])
+    return render_template('forum.html',comments = getForumComments()) 
                    
 @routeManager.route('/studyRoomCreate', methods=["POST"])
 def studyRoomCreate():
@@ -207,4 +221,5 @@ def promptAI():
     print(res)
     return render_template('studySpaceTest.html', output= res)
     #return render_template('response.html', response=generate_content(prompt))
+
     
