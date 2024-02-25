@@ -5,7 +5,8 @@ document.addEventListener("domContentLoaded",main())
 
 
 function main(){
-  console.log(output)
+  demoQs=JSON.parse(document.getElementById("output").innerHTML);
+  console.log(demoQs.questions)
 
 
   let qIndex=0;
@@ -18,10 +19,10 @@ function main(){
   let currentq;
   function update(){
     q_text.innerHTML = demoQs.questions[qIndex].question
-    a1_text.innerHTML = demoQs.questions[qIndex].options[0]
-    a2_text.innerHTML = demoQs.questions[qIndex].options[1]
-    a3_text.innerHTML = demoQs.questions[qIndex].options[2]
-    a4_text.innerHTML = demoQs.questions[qIndex].options[3]
+    a1_text.innerHTML = demoQs.questions[qIndex].answers[0]
+    a2_text.innerHTML = demoQs.questions[qIndex].answers[1]
+    a3_text.innerHTML = demoQs.questions[qIndex].answers[2]
+    a4_text.innerHTML = demoQs.questions[qIndex].answers[3]
     score_text.innerHTML=`${correctAnswers} / ${qsAnswered}`
     currentq = demoQs.questions[qIndex]
   }
@@ -32,15 +33,15 @@ function main(){
   let a4_box = document.getElementById("a4-box")
 
   a1_box.addEventListener("click", function() {
-    answerClicked(currentq.answer == currentq.options[0]);
+    answerClicked(currentq.correct_answer == currentq.answers[0]);
   });
   a2_box.addEventListener("click", function() {
-answerClicked(currentq.answer == currentq.options[1]);  });
+answerClicked(currentq.correct_answer == currentq.answers[1]);  });
   a3_box.addEventListener("click", function() {
-    answerClicked(currentq.answer == currentq.options[2]);
+    answerClicked(currentq.correct_answer == currentq.answers[2]);
   });
   a4_box.addEventListener("click", function() {
-    answerClicked(currentq.answer == currentq.options[3]);
+    answerClicked(currentq.correct_answer == currentq.answers[3]);
   });  
   function answerClicked(isCorrect){
     qsAnswered++;

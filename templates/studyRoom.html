@@ -28,11 +28,11 @@
                                     <div id="timer"></div>
                                     <div class="upload-container">
 
-                                    <form action="" method="post" id="notes-form">
+                                    <form action="/promptAI" method="post" id="notes-form">
                                         <div class="form-group">
                                             <label for="notes">Submit study material</label>
                                             <br>
-                                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                                            <textarea class="form-control" name="prompt" id="notes" rows="3"></textarea>
                                             <br>
                                             <input type="submit" value="Upload" class="btn btn-success">
                                         </div>
@@ -48,6 +48,7 @@
     </header>
 
     </div>
+    
    <script src="/static/js/studyRoom.js"></script>
    
       

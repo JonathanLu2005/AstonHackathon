@@ -14,9 +14,6 @@
 </head>
 {% block content %}
 <body>
-  <script>
-    var output = JSON.parse('{{ output | safe }}');
-  </script>
   <section class="jumbotron text-left">
     <div class="container">
       <div class="card border-dark border-5 border rounded-bottom rounded-top">
@@ -51,6 +48,9 @@
     <br>
   </div>
   <canvas id="myCanvas" width="400" height="200"></canvas>
+  <div id = "output"class="invisible">
+    {{output}}
+  </div>
   <script defer src="/static/js/script.js"></script>
   <!-- <script src="/static/js/gooseRace.js"></script> -->
 </body>
