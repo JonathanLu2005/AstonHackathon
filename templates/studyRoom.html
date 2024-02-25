@@ -12,25 +12,42 @@
 {% block content %}
 <body>
     <header>
-        <h1>
-            Room Name:{{roomName}} Room Code:{{roomCode}}
-        </h1>
-        <h1 id="clock">00:00:00</h1>
+        <section class="jumbotron text-left">
+            <div class="container">
+                <div class="card-group">
+                    <div class="card">
+                        <h2 class="card-title card-header text-center">Room {{roomName}} and Code {{roomCode}}</h2>
+                        <div class="card-body col d-flex justify-content-center">
+                            <div class="card-text text-left">
+                                <centre>
+                                    <h1 id="clock">00:00:00</h1>
+
+                                    <label for="durationInput">Set Duration (hh:mm:ss):</label>
+                                    <input type="time" id="durationInput" step="1" value="00:10">
+                                    <button id="play-pause" class="btn btn-success">Play/Pause</button>
+                                    <div id="timer"></div>
+                                    <div class="upload-container">
+
+                                    <form action="" method="post" id="notes-form">
+                                        <div class="form-group">
+                                            <label for="notes">Submit study material</label>
+                                            <br>
+                                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                                            <br>
+                                            <input type="submit" value="Upload" class="btn btn-success">
+                                        </div>
+                                    </form>
+                                </centre>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
-    <label for="durationInput">Set Duration (hh:mm:ss):</label>
-    <input type="time" id="durationInput" step="1" value="00:10">
-    <button id="play-pause">Play/Pause</button>
-    <div id="timer"></div>
-    <div class="upload-container">
-        
-        <form action="" method="post" id="notes-form">
-          <label for="notes">Copy and Paste notes here</label>
-          <textarea title="notes" id="" cols="30" rows="10"></textarea>
-          <input type="submit" value="Upload">
-        </form>
-        
-   </div>
-   <canvas id="myCanvas" width="400" height="200"></canvas>
+
+    </div>
    <script src="/static/js/studyRoom.js"></script>
    
       
