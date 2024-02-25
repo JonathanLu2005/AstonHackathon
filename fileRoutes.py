@@ -98,15 +98,124 @@ def studyRoomJoin():
 
 @routeManager.route('/studySpaceTest', methods=["POST","GET"])
 def studySpaceTest():
-    return render_template('studySpaceTest.html')
+    return render_template('studySpaceTest.html', output="")
 
 @routeManager.route('/promptAI', methods=["POST"])
 def promptAI():
-    template1 = "Generate 10 questions which relate to the below text. The questions should be multiple choice, each of which have 4 options. Give your output as a JSON object with all questions and answers.\n"
+    template1 = """
+        Generate 10 questions which are on the content of the below text. The questions should be multiple choice, each of which have 4 options. Give your output as a JSON object with all questions and answers. The output should have the same structure as:
+
+{
+ "questions": [
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  },
+  {
+   "question": "something",
+   "answers": [
+    "something",
+    "something",
+    "something",
+    "something"
+   ],
+   "correct_answer": "something"
+  }
+ ]
+}\n
+    """
     prompt = request.form["prompt"]
     res = generate_content(template1+prompt)
-    print(res[4:-4])
-    return json.loads(res[4:-4])
+    #print(res[4:-4])
+    #output = json.loads(res[4:-4])  ##This should go to output
+    print(res)
+    return render_template('studySpaceTest.html', output= res)
     #return render_template('response.html', response=generate_content(prompt))
 
     

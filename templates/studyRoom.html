@@ -28,11 +28,11 @@
                                     <div id="timer"></div>
                                     <div class="upload-container">
 
-                                    <form action="" method="post" id="notes-form">
+                                    <form action="/promptAI" method="post" id="notes-form">
                                         <div class="form-group">
                                             <label for="notes">Submit study material</label>
                                             <br>
-                                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                                            <textarea class="form-control" name="prompt" id="notes" rows="3"></textarea>
                                             <br>
                                             <input type="submit" value="Upload" class="btn btn-success">
                                         </div>
@@ -47,14 +47,15 @@
         </section>
     </header>
     <div id="audioControls">
-        <button id="playButton" style="font-size:25px">Play Music</button>
-        <button id="pauseButton" style="font-size:25px">Pause Music</button>
+        <button id="playButton" style="font-size:20px">Play Music</button>
+        <button id="pauseButton" style="font-size:20px">Pause Music</button>
       </div>
       <canvas id="visualizer" widht="800" height="300"></canvas>
         <audio id="audioPlayer" controls>
           <source src="{{ url_for('static', filename='music/lofiMusic.mp3') }}" type="audio/mpeg">
         </audio>
     </div>
+    
    <script src="/static/js/studyRoom.js"></script>
    
       
