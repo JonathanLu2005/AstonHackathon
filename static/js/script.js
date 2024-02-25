@@ -1,3 +1,6 @@
+let gooseX=window.innerWidth;
+var correctAnswers=0;
+var qsAnswered=0;
 document.addEventListener("domContentLoaded",main())
 
 
@@ -56,8 +59,8 @@ function main(){
       }
     ]
   }
-  let correctAnswers=0;
-  let qsAnswered=0;
+
+
   let qIndex=0;
   let q_text = document.getElementById("q-text");
   let a1_text = document.getElementById("a1-text")
@@ -100,4 +103,71 @@ answerClicked(currentq.answer == currentq.options[1]);  });
     qIndex= (qIndex+1)%demoQs.questions.length;
     update();
   }
+<<<<<<< HEAD
 }
+=======
+}
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
+const spriteWidth = 64; // Width of each frame in the sprite
+const spriteHeight = 64; // Height of each frame in the sprite
+const spriteFrames = 17; // Total number of frames in the sprite
+
+const spriteImage = new Image();
+spriteImage.src = '/static/assets/BackGroundGoose.png'; // Replace with the actual path to your sprite image
+
+let frameIndex = 0;
+let frameCounter = 0;
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw the current frame of the sprite
+  ctx.drawImage(
+    spriteImage,
+    frameIndex * spriteWidth, //Source x
+    0, //Source Y
+    spriteWidth, //Source Width
+    spriteHeight, //Source Height
+    gooseX, //Destination X
+    0, //Destination Y
+    spriteWidth*3, //Destination Width
+    spriteHeight*3 //Destination Height
+  );
+
+  // Update frame index for the next iteration
+  frameIndex = (frameIndex + 1) % spriteFrames;
+
+  // Increase the frame counter
+  frameCounter++;
+if(gooseX<-spriteWidth*3){
+    gooseX = canvas.width;
+}else if(gooseX>(canvas.width-spriteWidth*3*correctAnswers)){
+    gooseX=gooseX-3;
+}
+
+  // Request the next animation frame
+  requestAnimationFrame(animate);
+}
+
+// Load the sprite image and start the animation when it's loaded
+spriteImage.onload = function () {
+    
+  animate();
+  canvas.width = window.innerWidth;
+  
+};
+
+var audio = document.getElementById('audioPlayer');
+var playButton = document.getElementById('playButton');
+var pauseButton = document.getElementById('pauseButton');
+
+playButton.addEventListener('click', function() {
+    audio.play();
+});
+
+pauseButton.addEventListener('click', function() {
+    audio.pause();
+});
+>>>>>>> e0c40bf999bd1eb71a224a40c937f70bf5bb3b6b
