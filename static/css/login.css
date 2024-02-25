@@ -47,7 +47,6 @@ body{
     padding:0;
     margin:0;
     box-sizing:border-box;
-    font-family: "Berkshire Swash";
     font-weight: 500;
     font-style: normal;
 }
@@ -75,11 +74,13 @@ header {
 }
 input[type="text"],input[type="password"] {
     text-align: center;
+    font-family: "Gorditas";
   }
 
 input[type="submit"]{
     width:6vw;
     height:5vh;
+    font-family: "Gorditas";
 }
   
 .login-form>*{
@@ -90,6 +91,7 @@ input[type="submit"]{
 
 .login-form>label{
     font-size:30px;
+    font-family: "Gorditas";
 }
 
 .infoText{
