@@ -13,66 +13,84 @@
 </head>
 {% block content %}
 <body>
-    <div class="top">
-
-    </div>
-    
-    <div class="wrapper">
+    <section class="jumbotron text-left">
+        <div class="vstack">
+            <div class="container">
+                <h1 class="text-center"> Rooms </h1>
         
-        <div class="left-side">
             
-            <div class = "centered">
-                <div class="info">
-                    <h1>{{errorMessage}}</h1>
-                </div>
-                <div class="create-room-title">
-                    <h1>Create Room</h1>
-                </div>
-                <div class="create-room">
-                    <form class="join-input" action="/studyRoomCreate" method="post">
-                        <input maxlength="10" type="text" name="roomName"placeholder="Room Name">
-                        <input type="submit" value="Create">
-                    </form>
-                </div>
-                <!-- End of create-room -->
-                <div class="join-room">
-                    <div class="title">
-                        <h1>Join Room</h1>
+                <div class="row">
+        
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card"> 
+                                <h2 class="card-title card-header text-center">Create and Join Rooms</h2>
+                                <div class="card-body col d-flex justify-content-center">
+                                    <div class="card-text text-left">
+                                        <centre>
+                                            <div class="info">
+                                                <h3>{{errorMessage}}</h3>
+                                            </div>
+                                            <div class="create-room-title">
+                                                <h3>Create Room</h3>
+                                            </div>
+                                            <div class="create-room">
+                                                <form class="join-input" action="/studyRoomCreate" method="post">
+                                                    <input maxlength="10" type="text" name="roomName"placeholder="Room Name">
+                                                    <input type="submit" value="Create">
+                                                </form>
+                                            </div>
+                                            <!-- End of create-room -->
+                                            <div class="join-room">
+                                                <div class="title">
+                                                    <h3>Join Room</h3>
+                                                </div>
+                                                <div>
+                                                    <form class="join-input" action="/studyRoomJoin"  method="post">
+                                                        <input maxlength="4" type="text" name="roomCode"placeholder="Enter code">
+                                                        <input type="submit" value="Join">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </centre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <form class="join-input" action="/studyRoomJoin"  method="post">
-                            <input maxlength="4" type="text" name="roomCode"placeholder="Enter code">
-                            <input type="submit" value="Join">
-                        </form>
+            
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card">
+                                <h2 class="card-title card-header text-center">Available Rooms</h2>
+                                <div class="card-body col d-flex justify-content-center">
+                                    <div class="card-text text-left">
+                                        <div class="list-rooms" id="list-rooms">
+                                            <div class="room">
+                                                <p> Name: XXXX Code: XXXX</p>
+                                    
+                                            </div>
+                                            <!-- <div class="room">
+                                                <p> Room XXXX</p>
+                                    
+                                            </div>
+                                            <div class="room">
+                                                <p> Room XXXX</p>
+                                    
+                                            </div> -->
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- End of join-room -->
-            </div>
-            <!-- End of centred -->
-        </div>
-        <!-- End of left-side -->
-        
-        <div class="right-side">
-            <div class="list-rooms" id="list-rooms">
-                <h1>Available Rooms</h1>
-                <div class="room">
-                    <p> Name: XXXX Code: XXXX</p>
-        
-                </div>
-                <!-- <div class="room">
-                    <p> Room XXXX</p>
-        
-                </div>
-                <div class="room">
-                    <p> Room XXXX</p>
-        
-                </div> -->
                 
             </div>
         </div>
-        <!-- End of right-side -->
-    </div>
-    <!-- End of wrapper -->
+    </section>
+
 
     <script src="/static/js/getRoomJSON.js" defer></script>
 </body>
