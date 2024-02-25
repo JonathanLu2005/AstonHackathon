@@ -1,6 +1,6 @@
 
 from flask import render_template, Blueprint, request, url_for, redirect
-from functions import addUniquePair, getActiveRooms, registerUser
+from functions import addUniquePair, getActiveRooms, registerUser, loginUser
 from flask_login import LoginManager, login_user, current_user, logout_user, login_required
 import random
 
@@ -21,13 +21,18 @@ def index():
 @routeManager.route('/login', methods=["POST", "GET"])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('login.html', errorMessage="")
     
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        # This is where you handle login
-        return render_template('login.html')
+        
+        error = loginUser(username, password)
+
+        if error != None:
+            return render_template('login.html', errorMessage=error)
+        else:
+            return redirect(url_for('routeManager.rooms'))
 
 @routeManager.route('/register', methods=["POST", "GET"])
 def register():

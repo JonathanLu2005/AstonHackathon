@@ -55,4 +55,13 @@ def registerUser(username, password):
         myUsers.insert_one(dataToAdd)
         return None
 
+def loginUser(username, password):
+    res = myUsers.find_one({"name": username})
+    if res == None:
+        return "User does not exist!"
+    else:
+        if res["password"] != password:
+            return "Incorrect password!"
+        else:
+            return None
 
