@@ -18,5 +18,5 @@ document.addEventListener("DOMContentLoaded",function(){
       xhr.open('GET', '/getQuiz', true);
       xhr.send();    
 
-      function displayQuestions
+      //function displayQuestions
 })
