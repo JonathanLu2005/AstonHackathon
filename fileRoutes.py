@@ -2,7 +2,9 @@
 from flask import render_template, Blueprint, request, url_for, redirect
 from functions import addUniquePair, getActiveRooms, registerUser, loginUser
 from flask_login import LoginManager, login_user, current_user, logout_user, login_required
+from AI import generate_content
 import random
+import json
 
 routeManager = Blueprint('routeManager', __name__, template_folder='templates', static_folder='static')
 loginManager= LoginManager()
@@ -83,3 +85,13 @@ def studyRoomJoin():
 @routeManager.route('/studySpaceTest', methods=["POST","GET"])
 def studySpaceTest():
     return render_template('studySpaceTest.html')
+
+@routeManager.route('/promptAI', methods=["POST"])
+def promptAI():
+    template1 = "Generate 10 questions which relate to the below text. The questions should be multiple choice, each of which have 4 options. Give your output as a JSON object with all questions and answers.\n"
+    prompt = request.form["prompt"]
+    res = generate_content(template1+prompt)
+    print(res[4:-4])
+    return json.loads(res[4:-4])
+    #return render_template('response.html', response=generate_content(prompt))
+    
