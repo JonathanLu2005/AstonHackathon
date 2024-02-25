@@ -3,3 +3,22 @@
     flex-direction: column;
     width:50vw;
 }
+
+#audioControls{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #playButton,#pauseButton{
+    border-radius:30px;
+    width: 10vw;
+    height: 10vh;
+    font-family: "Gorditas";
+    font-size:20px;
+    margin:10px;
+  }
+  
+  #visualizer {
+    background-color:transparent;
+  }

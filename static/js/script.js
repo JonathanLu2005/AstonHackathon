@@ -103,10 +103,8 @@ answerClicked(currentq.answer == currentq.options[1]);  });
     qIndex= (qIndex+1)%demoQs.questions.length;
     update();
   }
-<<<<<<< HEAD
 }
-=======
-}
+
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -170,4 +168,3 @@ playButton.addEventListener('click', function() {
 pauseButton.addEventListener('click', function() {
     audio.pause();
 });
->>>>>>> e0c40bf999bd1eb71a224a40c937f70bf5bb3b6b
