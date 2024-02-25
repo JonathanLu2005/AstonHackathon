@@ -12,7 +12,7 @@
 {% block content %}
 <body>
     <header>
-        <section class="jumbotron text-left">
+        <section class="jumbotron text-left animated-element">
             <div class="container">
                 <div class="card-group">
                     <div class="card">
@@ -24,7 +24,7 @@
 
                                     <label for="durationInput">Set Duration (hh:mm:ss):</label>
                                     <input type="time" id="durationInput" step="1" value="00:10">
-                                    <button id="play-pause" class="btn btn-success">Play/Pause</button>
+                                    <button id="play-pause" class="btn btn-success">Start/Stop</button>
                                     <div id="timer"></div>
                                     <div class="upload-container">
 
@@ -46,7 +46,14 @@
             </div>
         </section>
     </header>
-
+    <div id="audioControls">
+        <button id="playButton" style="font-size:25px">Play Music</button>
+        <button id="pauseButton" style="font-size:25px">Pause Music</button>
+      </div>
+      <canvas id="visualizer" widht="800" height="300"></canvas>
+        <audio id="audioPlayer" controls>
+          <source src="{{ url_for('static', filename='music/lofiMusic.mp3') }}" type="audio/mpeg">
+        </audio>
     </div>
    <script src="/static/js/studyRoom.js"></script>
    
