@@ -75,3 +75,7 @@ def studyRoomJoin():
         if room['codes'] == roomCode.upper():
             return render_template('studyRoom.html',roomName = room["name"], roomCode = roomCode)
     return render_template('rooms.html', errorMessage="Room does not exist")
+
+@routeManager.route('/studySpaceTest', methods=["POST","GET"])
+def studySpaceTest():
+    return render_template('studySpaceTest.html')
